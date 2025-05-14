@@ -1,0 +1,53 @@
+//--------Pseudocode
+
+BINARY_SEARCH(a, n, target):
+
+    lp → 0
+    rp → n - 1
+    flag → false
+    idx → -1
+
+    while lp ≤ rp:
+        mid → (lp + rp) / 2
+
+        if a[mid] == target:
+            flag → true
+            idx → mid
+            break
+
+        else if target < a[mid]:
+            rp → mid - 1
+
+        else:
+            lp → mid + 1
+
+    if flag == true:
+        Output "Found"
+
+    else:
+        Output "Not Found"
+
+
+
+//---------- Algorithm 
+1. Start
+
+2. Take input of array size (n) and the array (must be sorted)
+
+3. Take input of the target number to search
+
+4. Set lp = 0, rp = n - 1
+
+5. Repeat while lp ≤ rp:
+     a. mid = (lp + rp) / 2
+     b. If a[mid] == target:
+            Found → print "Found"
+            Exit
+     c. Else if target < a[mid]:
+            rp = mid - 1
+     d. Else:
+            lp = mid + 1
+
+6. If not found, print "Not Found"
+
+7. End
