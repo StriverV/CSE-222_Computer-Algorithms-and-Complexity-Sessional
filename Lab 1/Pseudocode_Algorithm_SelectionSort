@@ -1,0 +1,26 @@
+/------- Pseudocode 
+
+for i → 0 to n - 2 do:
+    min_idx → i
+
+    for j → i + 1 to n - 1 do:
+        if A[j] < A[min_idx] then
+            min_idx → j
+
+    if min_idx ≠ i then
+        swap A[i] and min_idx]
+
+
+/------- Algorithm 
+ 
+1. Start
+2. Input the number of elements n
+3. Input the array A of size n
+4. Repeat for i = 0 to n - 2:
+    a. Set minIndex = i
+    b. Repeat for j = i + 1 to n - 1:
+        i. If A[j] < A[minIndex], then set minIndex = j
+    c. If minIndex ≠ i, then swap A[i] and A[minIndex]
+
+
+5. Output the sorted array
