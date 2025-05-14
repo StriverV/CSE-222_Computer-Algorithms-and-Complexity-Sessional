@@ -1,5 +1,16 @@
 //---------- Pseudocode 
 
+Function InsertionSort(arr, n):
+    For i = 1 to n-1:
+        value = arr[i]
+        j = i - 1
+
+        While j >= 0 and arr[j] > value:
+            arr[j + 1] = arr[j]
+            j = j - 1
+        
+        arr[j + 1] = value
+
 
 // ---------- Algorithm: Insertion Sort
 
