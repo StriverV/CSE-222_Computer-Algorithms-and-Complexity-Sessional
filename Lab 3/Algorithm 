@@ -1,0 +1,94 @@
+Algorithm: Merge Sort
+
+Function MERGE(c, l, mid, r)  // Conquer Step
+
+1. Let n = mid - l + 1
+
+
+2. Create array a[0...n-1]
+
+
+3. Set k = l
+
+
+4. For i = 0 to n - 1:
+  a[i] = c[k]
+  k = k + 1
+
+
+5. Let m = r - mid
+
+
+6. Create array b[0...m-1]
+
+
+7. Set k = mid + 1
+
+
+8. For i = 0 to m - 1:
+  b[i] = c[k]
+  k = k + 1
+
+
+9. Set i = 0, j = 0, curr = l
+
+
+10. While i < n and j < m:
+  If a[i] < b[j]:
+    c[curr] = a[i], i = i + 1
+  Else:
+    c[curr] = b[j], j = j + 1
+  curr = curr + 1
+
+
+11. While i < n:
+  c[curr] = a[i]
+  i = i + 1, curr = curr + 1
+
+
+12. While j < m:
+  c[curr] = b[j]
+  j = j + 1, curr = curr + 1
+
+
+
+
+---
+
+Function MERGESORT(a, l, r)  // Divide Step
+
+1. If l < r:
+  mid = (l + r) / 2
+  MERGESORT(a, l, mid)
+  MERGESORT(a, mid + 1, r)
+  MERGE(a, l, mid, r)
+
+
+
+
+------
+
+Main Program
+
+1. Read n
+
+
+2. Create array a[0...n-1]
+
+
+3. For i = 0 to n - 1:
+  Read a[i]
+
+
+4. Call MERGESORT(a, 0, n - 1)
+
+
+5. For i = 0 to n - 1:
+  Print a[i] with space
+
+
+6. Print newline
+
+
+
+
