@@ -1,0 +1,28 @@
+//---------- Pseudocode 
+
+
+// ---------- Algorithm: Insertion Sort
+
+1. Start
+
+2. Input the number of elements n
+
+3. Input the array A of size n
+
+
+4. Repeat for i = 1 to n - 1:
+ a. Set key = A[i]
+ b. Set j = i - 1
+ c. While j ≥ 0 and A[j] > key:
+  i. Set A[j + 1] = A[j]
+  ii. Decrease j by 1
+ d. Set A[j + 1] = key
+
+
+5. Output the sorted array
+
+6. End
+
+
+
+
