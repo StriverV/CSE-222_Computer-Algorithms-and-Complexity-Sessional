@@ -1,0 +1,48 @@
+//----------------Pseudocode
+Function quickSort(a, l, r):
+    if l < r:
+        pivotIndex = partition(a, l, r)
+        quickSort(a, l, pivotIndex - 1)
+        quickSort(a, pivotIndex + 1, r)
+
+Function partition(a, l, r):
+    pivot = a[r]    //(last element)
+    i = l - 1
+
+    for j from l to r - 1:
+        if a[j] < pivot:
+            i = i + 1
+            swap a[i] with a[j]
+
+    swap a[i + 1] with a[r]
+    return i + 1
+
+---
+
+
+//------------- Algorithm: QUICK_SORT(a, l, r)
+
+Input: Array a, left index l, right index r
+Output: Sorted array a
+
+1. if l < r then
+2.     pivotIndex = PARTITION(a, l, r)
+3.     QUICK_SORT(a, l, pivotIndex - 1)
+4.     QUICK_SORT(a, pivotIndex + 1, r)
+
+
+----
+
+Algorithm: PARTITION(a, l, r)
+
+Input: Array a, left index l, right index r
+Output: Final index of the pivot
+
+1. pivot = a[r]
+2. i = l - 1
+3. for j = l to r - 1 do
+4.     if a[j] < pivot then
+5.         i = i + 1
+6.         swap a[i] and a[j]
+7. swap a[i + 1] and a[r]
+8. return i + 1
