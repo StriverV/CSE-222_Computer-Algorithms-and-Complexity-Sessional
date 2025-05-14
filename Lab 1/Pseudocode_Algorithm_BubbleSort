@@ -1,0 +1,31 @@
+//------- Pseudocode 
+
+
+BUBBLE_SORT(A, n):
+
+    for i → 0 to n - 1:
+        swapped → false
+        for j → 0 to n - i - 2:
+            if A[j] > A[j + 1]:
+                swap A[j] and A[j + 1]
+                swapped → true
+
+        if swapped = false:
+            break
+
+    Output A
+
+//----- Algorithm 
+
+1. BUBBLE_SORT(A, n)
+2.     For i = 0 to n - 1 do:
+3.         swapped -> false
+4.         For j = 0 to n - i - 2 do:
+5.             If A[j] > A[j + 1] then:
+6.                 Swap A[j] and A[j + 1]
+7.                 swapped -> true
+8.         End For
+9.         If swapped = false then:
+10.             Break
+11.     End For
+12.     Output A
