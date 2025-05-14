@@ -1,0 +1,17 @@
+//--------Pseudocode 
+
+LINEAR_SEARCH(A, n, target):
+    for i = 0 to n - 1:
+        if A[i] = target:
+            return i
+    return -1
+
+
+//--------Algorithm 
+
+1. LINEAR_SEARCH(A, n, target)
+2.     For i = 0 to n - 1 do:
+3.         If A[i] = target then:
+4.             Return i
+5.     End For
+6.     Return -1   // Target not found
