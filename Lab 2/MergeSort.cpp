@@ -1,0 +1,58 @@
+
+Function merge(c, l, mid, r):   // conquer
+    n = mid - l + 1
+    Create array a of size n
+    k = l
+    For i from 0 to n-1:
+        a[i] = c[k]
+        k = k + 1
+
+    m = r - mid
+    Create array b of size m
+    k = mid + 1
+    For i from 0 to m-1:
+        b[i] = c[k]
+        k = k + 1
+
+    i = 0, j = 0, curr = l
+
+    While i < n and j < m:
+        If a[i] < b[j]:
+            c[curr] = a[i]
+            i = i + 1
+        Else:
+            c[curr] = b[j]
+            j = j + 1
+        curr = curr + 1
+
+    While i < n:
+        c[curr] = a[i]
+        i = i + 1
+        curr = curr + 1
+
+    While j < m:
+        c[curr] = b[j]
+        j = j + 1
+        curr = curr + 1
+
+--------------------------------------
+
+Function mergeSort(a, l, r):      // divide
+    If l < r:
+        mid = (l + r) / 2
+        mergeSort(a, l, mid)
+        mergeSort(a, mid + 1, r)
+        merge(a, l, mid, r)
+
+---------------------------------------
+Main:
+    Read n
+    Create array a of size n
+    For i from 0 to n-1:
+        Read a[i]
+
+    mergeSort(a, 0, n - 1)
+
+    For i from 0 to n-1:
+        Print a[i] with space
+    Print newline
