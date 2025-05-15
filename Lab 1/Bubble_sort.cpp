@@ -1,38 +1,38 @@
-
 #include<bits/stdc++.h>
-#define Naba ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0);
-#define ll long long 
-#define nl '\n'
+#define Naba ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0);
 using namespace std;
+
+
+void bubbleSort(vector<int>& v)
+{
+    int n = v.size();
+    for(int i = 0; i < n - 1; i++)
+    {
+        bool swapped = false;
+
+        for(int j = 0; j < n - i - 1; j++)
+        {
+            if(v[j] > v[j + 1])
+            {
+                swap(v[j], v[j + 1]);
+                swapped = true;
+            }
+        }
+
+        if(!swapped)
+            break;
+    }
+}
 
 int main()
 {
-    int n;
-    cin >> n;
-    vector<int>v(n);
+    Naba;
+    vector<int> v = {5, 3, 8, 4, 2};
 
-    for(int i = 0; i  < n; i++)
-        cin >> v[i];
+    bubbleSort(v);
 
-    for(int i = 0; i < n - 1; i++)   //steps
-    {
-        bool swapped = 0;
-
-        for(int j = 0; j < n - i -1; j++)
-        {
-            if(v[j] > v[j+1])     // for Ascending Order (Increasing Order)
-            {
-                swap(v[j], v[j+1]);
-                swapped = 1;
-            }       
-        }
-
-        if(!swapped)    break;
-    }
-
-    for(int i = 0; i < n; i++)
+    for(int i = 0; i < v.size(); i++)
         cout << v[i] << " ";
-    cout<<nl;
 
     return 0;
 }
