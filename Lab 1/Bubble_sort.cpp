@@ -1,9 +1,9 @@
 #include<bits/stdc++.h>
-#define Naba ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0);
+#define Naba ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0);
 using namespace std;
 
 
-void bubbleSort(vector<int>& v)
+void BubbleSort(vector<int>& v)     // arr-> int a[]
 {
     int n = v.size();
     for(int i = 0; i < n - 1; i++)
@@ -27,9 +27,12 @@ void bubbleSort(vector<int>& v)
 int main()
 {
     Naba;
-    vector<int> v = {5, 3, 8, 4, 2};
-
-    bubbleSort(v);
+    int n; cin >> n;
+    vector<int> v(n);
+    for(int i = 0; i < v.size(); i++)
+        cin >> v[i];
+    
+    BubbleSort(v);
 
     for(int i = 0; i < v.size(); i++)
         cout << v[i] << " ";
