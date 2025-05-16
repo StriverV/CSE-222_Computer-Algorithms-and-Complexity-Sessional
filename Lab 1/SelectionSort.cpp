@@ -1,5 +1,5 @@
-#include <iostream>
-using namespace std;
+#include<bits/stdc++.h>
+#define Naba ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0)
 
 void selectionSort(int a[], int n)
 {
@@ -22,6 +22,8 @@ void selectionSort(int a[], int n)
 
 int main() 
 {
+    Naba;
+    
     int n;  cin >> n;
     int a[n];
     for (int i = 0; i < n; i++) 
