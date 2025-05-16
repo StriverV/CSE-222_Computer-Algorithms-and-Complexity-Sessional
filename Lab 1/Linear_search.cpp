@@ -1,7 +1,8 @@
-#include <iostream>
-using namespace std;
+#include<bits/stdc++.h>
+#define Naba ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0)
 
-int linearSearch(int A[], int n, int target) {
+int linearSearch(int A[], int n, int target) 
+{
     for (int i = 0; i < n; i++) 
     {
         if (A[i] == target) 
@@ -10,7 +11,10 @@ int linearSearch(int A[], int n, int target) {
     return -1;
 }
 
-int main() {
+int main() 
+{
+    Naba;
+    
     int n;  cin >> n;
     int a[n]; 
     for (int i = 0; i < n; i++) 
