@@ -1,9 +1,9 @@
 #include<bits/stdc++.h>
-#define Naba ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0);
+#define Naba ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0)
 #define nl '\n'
 using namespace std;
 
-void merge(int c[], int l, int mid, int r)      // here merge is conquer
+void merge(int c[], int l, int mid, int r)      // conquer
 {
     int n = mid-l+1;
     int a[n];
@@ -39,7 +39,7 @@ void merge(int c[], int l, int mid, int r)      // here merge is conquer
     }
 }
 
-void mergeSort(int a[], int l, int r)      // here mergeSort is  divide
+void mergeSort(int a[], int l, int r)      // divide
 {
     int mid = (l+r)/2;
     if(l < r)
@@ -59,7 +59,7 @@ int main()
     for(int i =0; i < n; i++)
         cin >> a[i];
 
-    mergeSort(a, 0, n-1);      //divide(a, 0, n-1);   
+    mergeSort(a, 0, n-1);     
 
 
     for(int i = 0; i < n; i++)
