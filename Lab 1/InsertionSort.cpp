@@ -1,5 +1,7 @@
 #include <iostream>
+#define Naba ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0)
 using namespace std;
+
 
 void insertionSort(int a[], int n) 
 {
@@ -17,9 +19,11 @@ void insertionSort(int a[], int n)
     }
 }
 
-int main() {
-    int n;
-    cin >> n;
+int main()
+{
+    Naba;
+    
+    int n;  cin >> n;
     int a[n];
 
     for (int i = 0; i < n; i++) 
@@ -28,9 +32,8 @@ int main() {
 
     insertionSort(a, n);
 
-    for (int i = 0; i < n; i++) {l
+    for (int i = 0; i < n; i++) 
         cout << arr[i] << " ";
-    
     cout << endl;
 
     return 0;
