@@ -33,6 +33,7 @@ void quickSort(int a[], int l, int r)
 
 int main() 
 {
+    Naba;
     int n;  cin >> n;
     int a[n];
     for (int i = 0; i < n; i++)
