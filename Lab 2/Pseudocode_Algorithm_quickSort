@@ -19,19 +19,6 @@ Function partition(a, l, r):
 
 
 //------------- Algorithm: QUICK_SORT(a, l, r)
-
-Input: Array a, left index l, right index r
-Output: Sorted array a
-
-1. if l < r then
-2.     pivotIndex = PARTITION(a, l, r)
-3.     QUICK_SORT(a, l, pivotIndex - 1)
-4.     QUICK_SORT(a, pivotIndex + 1, r)
-
-
-----
-
-Algorithm: QUICK_SORT(a, l, r)
 1. if l < r then
 2.     pivotIndex ← PARTITION(a, l, r)
 3.     QUICK_SORT(a, l, pivotIndex - 1)
