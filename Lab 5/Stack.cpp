@@ -9,13 +9,18 @@ int main()
     int n;
     cin >> n;  
 
-    // Input n elements into stack
     for(int i = 0; i < n; i++)
     {
         int x;
         cin >> x;
         st.push(x);
     }
+
+    st.push(10);                     // Add element
+    cout << st.top() << endl;        // Access top element → 20
+    st.pop();                         // Remove top element (20)
+    cout <<  st.empty() << endl;      // Check if empty
+    cout << st.size() << endl;       // Number of elements
 
     // Print and pop elements (LIFO order)
     while(!st.empty())
@@ -27,22 +32,3 @@ int main()
     return 0;
 }
 
-/*
-use case:
-BFS in graphs, printer queue, scheduling.
-
-LIFO: Last In, First Out
-Think of: A pile of plates — you can only take the top one.
-
-
-queue<int> q;
-
-q.push(10);      // Add element
-q.push(20);
-
-q.front();       // Access front → 10
-q.pop();         // Remove front (10)
-q.empty();       // Check if empty
-q.size();        // Number of elements
-
-*/
