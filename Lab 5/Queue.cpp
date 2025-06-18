@@ -23,7 +23,7 @@ int main()
     //  q.empty();                  // Check if empty
     cout << q.size() << endl;        // Number of elements
     
-    // print
+   // Print and remove elements (FIFO order)
     while(!q.empty()) 
     {
         cout << q.front() << " ";
