@@ -18,7 +18,7 @@ int main()
 
     st.push(10);                     // Add element
     cout << st.top() << endl;        // Access top element → 20
-    st.pop();                         // Remove top element (20)
+    st.pop();                        // Remove top element (20)
     cout <<  st.empty() << endl;      // Check if empty
     cout << st.size() << endl;       // Number of elements
 
