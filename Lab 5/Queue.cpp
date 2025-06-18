@@ -9,7 +9,6 @@ int main()
     int n;
     cin >> n;  
 
-    // Input n elements into queue
     for(int i = 0; i < n; i++) 
     {
         int x;
@@ -17,7 +16,14 @@ int main()
         q.push(x);
     }
 
-    // Print and remove elements (FIFO order)
+    
+    cout << q.push(10) << endl;      // Add element
+     //  q.front();                 // Access front → 10
+     q.pop();                       // Remove front (10)
+    //  q.empty();                  // Check if empty
+    cout << q.size() << endl;        // Number of elements
+    
+    // print
     while(!q.empty()) 
     {
         cout << q.front() << " ";
@@ -28,18 +34,5 @@ int main()
 }
 
 
-/*
-FIFO: First In, First Out
-Think of: A line at a ticket counter — first comes, first served.
 
-stack<int> st;
 
-st.push(10);     // Add element
-st.push(20);
-
-st.top();        // Access top element → 20
-st.pop();        // Remove top element (20)
-st.empty();      // Check if empty
-st.size();       // Number of elements
-
-*/
