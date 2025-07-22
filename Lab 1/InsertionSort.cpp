@@ -1,40 +1,56 @@
-#include <iostream>
-#define Naba ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0)
+#include<bits/stdc++.h>
 using namespace std;
-
-
-void insertionSort(int a[], int n) 
+vector<int>v(1005);
+void print (int n)
 {
-    for (int i = 1; i < n; i++)   // from 2nd element 
-    {
-        int value = a[i];
-        int j = i - 1;
+    for(int i = 0; i < n; i++)
+       cout << v[i] << " ";
+       
+    cout << endl;
+}
 
-        while (j >= 0 && a[j] > value)
+void InsertionSort(int n)
+{
+    int cmp = 0, shift = 0;
+    for(int i = 1; i < n; i++)
+    {
+        int key = v[i];
+        int j = i-1;
+        
+        while(j >= 0 && key < v[j])
         {
-            a[j + 1] = a[j];
+            cmp++;
+            v[j+1] = v[j];
+            shift++;
             j--;
         }
-        a[j + 1] = value;
+        v[j+1] = key;
+        shift++;
+        
+        if(j >= 0) cmp++;
+        cout << "Step " << i << " : ";
+        print(n);
     }
+    cout << "shift : " << shift << " & cmp : " <<  cmp << endl;
+   
 }
 
 int main()
 {
-    Naba;
+    int n;
+    cin >> n;
     
-    int n;  cin >> n;
-    int a[n];
-
-    for (int i = 0; i < n; i++) 
-        cin >> a[i];
+    for(int i = 0; i < n; i++)
+        cin >> v[i];
+        
+    cout << "Before sorting : ";
+    print(n);
     
-
-    insertionSort(a, n);
-
-    for (int i = 0; i < n; i++) 
-        cout << arr[i] << " ";
-    cout << endl;
-
+    InsertionSort(n);
+    
+    cout << "After sorting : ";
+    print(n);
+     
+    
     return 0;
 }
