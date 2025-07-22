@@ -1,50 +1,51 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 
-// Structure to store item value and weight
-struct Item {
-    double value;
-    double weight;
-};
+double v[100];
+double w[100];
+int item_idx[100];
 
-// Sort items by value/weight ratio (high to low)
-bool compare(Item a, Item b) {
-    return (a.value / a.weight) > (b.value / b.weight);
+bool cmp(int i, int j)
+{
+    return ( (v[i]/w[i])  >  (v[j]/w[j]));
 }
 
-int main() {
-    int n;         // number of items
-    double C;      // capacity of knapsack
-    cin >> n >> C;
+double fractionalKnapsack(int n, int c)
+{
+    for(int i = 0; i < n; i++)   
+        item_idx[i] = i;
 
-    vector<Item> items(n);
+    sort(item_idx, item_idx + n, cmp);
 
-    // Input values
-    for (int i = 0; i < n; i++)
-        cin >> items[i].value;
-
-    // Input weights
-    for (int i = 0; i < n; i++)
-        cin >> items[i].weight;
-
-    // Sort items by value per weight (descending)
-    sort(items.begin(), items.end(), compare);
-
-    double total_value = 0.0;  // total value in knapsack
-
-    for (int i = 0; i < n && C > 0; i++) {
-        if (items[i].weight <= C) {
-            // Take full item
-            C -= items[i].weight;
-            total_value += items[i].value;
-        } else {
-            // Take fractional part
-            total_value += items[i].value * (C / items[i].weight);
-            C = 0;
+    double total = 0.0;
+    
+    for(int i = 0; i < n; i++)
+    {
+        int itemNo = item_idx[i];
+        if(w[itemNo] <= c)
+        {
+            total += v[itemNo];
+            c -= w[itemNo];
+        }
+        else
+        {
+            total += (v[itemNo]/w[itemNo]) * c;
+            break;
         }
     }
 
-    cout << "Total Value : " << total_value << endl;
+    return total;
+}
+
+int main()
+{
+    int n, c;
+    cin >> n >> c;
+    
+    for(int i = 0; i < n; i++)  cin >> v[i];
+    for(int i = 0; i < n; i++)  cin >> w[i];
+
+    cout << fractionalKnapsack(n, c) << endl;
 
     return 0;
 }
